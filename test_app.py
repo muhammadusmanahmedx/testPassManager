@@ -11,7 +11,7 @@ class NextAppTests(unittest.TestCase):
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         self.driver = webdriver.Chrome(options=chrome_options)
-        self.url = "http://YOUR_EC2_PUBLIC_IP:5100"  # ⬅️ Replace this with your actual EC2 public IP
+        self.url = "http://3.88.195.52:5100"  # 🔁 Replace with actual EC2 IP
 
     def tearDown(self):
         self.driver.quit()
