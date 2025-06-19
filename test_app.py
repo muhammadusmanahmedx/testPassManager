@@ -11,7 +11,7 @@ class NextAppTests(unittest.TestCase):
         chrome_options.add_argument("--no-sandbox")
         chrome_options.add_argument("--disable-dev-shm-usage")
         self.driver = webdriver.Chrome(options=chrome_options)
-        self.url = "http://3.88.195.52:5100"  # 🔁 Replace with actual EC2 IP
+        self.url = "http://3.88.195.52:5100"  # Replace with actual EC2 IP
 
     def tearDown(self):
         self.driver.quit()
@@ -52,8 +52,8 @@ class NextAppTests(unittest.TestCase):
 
     def test_login_success_redirect(self):
         self.driver.get(f"{self.url}/login")
-        self.driver.find_element(By.NAME, "email").send_keys("test@example.com")
-        self.driver.find_element(By.NAME, "password").send_keys("123456")
+        self.driver.find_element(By.NAME, "email").send_keys("admin@example.com")
+        self.driver.find_element(By.NAME, "password").send_keys("123")
         self.driver.find_element(By.CSS_SELECTOR, "button[type='submit']").click()
         time.sleep(1)
         self.assertIn("Dashboard", self.driver.page_source)
